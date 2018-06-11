@@ -322,6 +322,7 @@ export default class ViewPager extends PureComponent {
                   keyExtractor={this.keyExtractor}
                   scrollEnabled={false}
                   horizontal={true}
+                  showsHorizontalScrollIndicator={false}
                   data={pageDataArray}
                   renderItem={this.renderRow}
                   onLayout={this.onLayout}
