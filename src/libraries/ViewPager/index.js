@@ -10,7 +10,7 @@ import PropTypes from 'prop-types';
 import Scroller from '../Scroller';
 import { createResponder } from '../GestureResponder';
 
-const MIN_FLING_VELOCITY = 0.5;
+const MIN_FLING_VELOCITY = 0.9;
 
 // Dimensions are only used initially.
 // onLayout should handle orientation swap.
@@ -207,7 +207,7 @@ export default class ViewPager extends PureComponent {
         page = this.validPage(page);
         this.onPageChanged(page);
 
-        velocityX *= -1000; // per sec
+        velocityX *= -800; // per sec
         const finalX = this.getScrollOffsetOfPage(page);
         this.scroller.fling(this.scroller.getCurrX(), 0, velocityX, 0, finalX, finalX, 0, 0);
     }
@@ -226,7 +226,7 @@ export default class ViewPager extends PureComponent {
                 this.refs['innerFlatList'] && this.refs['innerFlatList'].recordInteraction();
             });
         } else {
-            this.scroller.startScroll(this.scroller.getCurrX(), 0, finalX - this.scroller.getCurrX(), 0, 400);
+            this.scroller.startScroll(this.scroller.getCurrX(), 0, finalX - this.scroller.getCurrX(), 0, 250);
         }
     }
 
