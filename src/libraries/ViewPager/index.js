@@ -207,7 +207,7 @@ export default class ViewPager extends PureComponent {
         page = this.validPage(page);
         this.onPageChanged(page);
 
-        velocityX *= -800; // per sec
+        velocityX *= -550; // per sec
         const finalX = this.getScrollOffsetOfPage(page);
         this.scroller.fling(this.scroller.getCurrX(), 0, velocityX, 0, finalX, finalX, 0, 0);
     }
@@ -226,7 +226,7 @@ export default class ViewPager extends PureComponent {
                 this.refs['innerFlatList'] && this.refs['innerFlatList'].recordInteraction();
             });
         } else {
-            this.scroller.startScroll(this.scroller.getCurrX(), 0, finalX - this.scroller.getCurrX(), 0, 250);
+            this.scroller.startScroll(this.scroller.getCurrX(), 0, finalX - this.scroller.getCurrX(), 0, 400);
         }
     }
 

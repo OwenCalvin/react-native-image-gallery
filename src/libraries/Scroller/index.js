@@ -11,14 +11,13 @@ import {currentAnimationTimeMillis} from './AnimationUtils';
  * The coefficient of friction applied to flings/scrolls.
  * @type {number}
  */
-// const SCROLL_FRICTION = 0.015;
-const SCROLL_FRICTION = 0.03;
+const SCROLL_FRICTION = 0.05;
 
-const DEFAULT_DURATION = 250;
+const DEFAULT_DURATION = 100;
 const SCROLL_MODE = 0;
 const FLING_MODE = 1;
 
-const DECELERATION_RATE = Math.log(0.78) / Math.log(0.9);
+const DECELERATION_RATE = Math.log(0.7) / Math.log(0.9);;
 const INFLEXION = 0.35; // Tension lines cross at (INFLEXION, 1)
 const START_TENSION = 0.5;
 const END_TENSION = 1.0;
